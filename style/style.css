@@ -7,16 +7,16 @@ body{
 	overflow: hidden;
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
-#siderMenu{
+.siderMenu{
 	position: fixed;
 	width: 250px;
 	height: 100%;
 	top: 0;
-	left: 0;
+	left: -250px;
 	background: #273c51;
 	transition: all .5s;
 }
-#siderMenu h1{
+.siderMenu h1{
 	color:#fff;
 	text-align: center;
 	font-size:30px;
@@ -24,16 +24,16 @@ body{
 	font-style: italic;
 	color:#40566e;
 }
-#siderMenu ul{
+.siderMenu ul{
 	margin: 0;
 	padding: 0;
 	border-top: 1px solid #40566e;
 }
-#siderMenu ul li{
+.siderMenu ul li{
 	list-style: none;
 	border-bottom: 1px solid #40566e;
 }
-#siderMenu ul li a{
+.siderMenu ul li a{
 	display:block;
 	color: #b6b0a4;
 	text-decoration: none;
@@ -42,7 +42,7 @@ body{
 	position: relative;
 	transition: all .5s;
 }
-#siderMenu ul li a:after{
+.siderMenu ul li a:after{
 	display: block;
 	content:"";
 	width: 10px;
@@ -56,14 +56,55 @@ body{
 	-ms-transform: translateY(-50%) rotate(45deg);
 	-o-transform: translateY(-50%) rotate(45deg);
 	transform: translateY(-50%) rotate(45deg);
-	transition: all .5s;
+	transition: all .2s;
 }
-#siderMenu ul li a:hover{
+.siderMenu ul li a:hover{
 	color:#fff;
 	background: #437c97;
 	padding-left:35px;
 }
-#siderMenu ul li a:hover:after{
+.siderMenu ul li a:hover:after{
 	right:25px;
 	border-color: #fff;
+}
+.siderMenu ul li a:active:after{
+	right:-10px;
+}
+.container{
+	position: relative;
+}
+.siderTarget{
+	position: absolute;
+	width:30px;
+	height:30px;
+	top:20px;
+	left:20px;
+	cursor: pointer;
+}
+.siderTarget span,.siderTarget span:before,.siderTarget span:after{
+	display:block;
+	position: absolute;
+	width:26px;
+	height:2px;
+	border-radius:2px;
+	background: #aaa;
+	top:6px;
+	left:2px;
+	transition: all .5s;
+}
+.siderTarget span:before,.siderTarget span:after{
+	content: "";
+	left:0;
+}
+.siderTarget span:before{
+	top:8px;
+}
+.siderTarget span:after{
+	top:16px;
+}
+.menu-active{
+	overflow: hidden;
+}
+.menu-active .siderMenu{
+	left:0;
 }

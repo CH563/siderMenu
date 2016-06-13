@@ -5,8 +5,8 @@
 	<title>侧边滑出菜单栏</title>
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
-<body>
-	<nav id="siderMenu">
+<body class="">
+	<nav class="siderMenu">
 		<h1>SiderMenu</h1>
 		<ul>
 			<li><a href="#">Home</a></li>
@@ -17,5 +17,15 @@
 			<li><a href="#">Help center</a></li>
 		</ul>
 	</nav>
+	<div class="container">
+		<div class="siderTarget"><span></span></div>
+	</div>
+	<script type="text/javascript">
+		var $body = document.body,
+			$target = $body.getElementsByClassName('siderTarget')[0];
+		$target.addEventListener('click',function () {
+			$body.className=( $body.className == 'menu-active' )? '' : 'menu-active';
+		})
+	</script>
 </body>
 </html>
